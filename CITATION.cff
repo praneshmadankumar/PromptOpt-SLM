@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you utilize this framework, research report, or experimental findings, please cite it as below."
+authors:
+  - family-names: "Madankumar"
+    given-names: "Pranesh"
+    affiliation: "JAIN (Deemed-to-be University)"
+title: "PromptOpt-SLM: Prompt Optimization Framework for Few-Shot Text Classification Using Small Language Models"
+version: 1.0.0
+date-released: 2026-11-24
+url: "https://github.com/praneshmadankumar/PromptOpt-SLM"
+repository-code: "https://github.com/praneshmadankumar/PromptOpt-SLM"
+abstract: >-
+  An intelligent prompt optimization framework for few-shot text classification
+  using small language models (SLMs). The framework integrates automated dataset
+  intelligence, grammar-based prompt generation, class-balanced maximal marginal
+  relevance demonstration selection, output-side contextual calibration,
+  budgeted successive-halving search with a stability-aware objective, an uncertainty
+  abstention gate, controlled perturbation robustness analysis, and an interactive
+  research dashboard.
+keywords:
+  - "prompt-optimization"
+  - "few-shot-classification"
+  - "in-context-learning"
+  - "small-language-models"
+  - "contextual-calibration"
+  - "prompt-fragility-index"
+  - "uncertainty-quantification"
+  - "streamlit"
+license: "MIT"
