@@ -1,0 +1,44 @@
+{
+  "demo": {
+    "backend": "simulated",
+    "model_name": "simulated-lexicon-slm",
+    "dataset": "data/demo_support_tickets.csv",
+    "shots_per_class": 4,
+    "val_per_class": 16,
+    "n_candidates": 16,
+    "halving_fractions": [0.25, 0.5, 1.0],
+    "stability_lambda": 0.5,
+    "stability_permutations": 4,
+    "n_test": 0,
+    "seeds": [0, 1, 2],
+    "max_forward_passes": 20000
+  },
+  "research": {
+    "backend": "hf",
+    "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dataset": "data/demo_support_tickets.csv",
+    "shots_per_class": 4,
+    "val_per_class": 16,
+    "n_candidates": 32,
+    "halving_fractions": [0.25, 0.5, 1.0],
+    "stability_lambda": 0.5,
+    "stability_permutations": 4,
+    "n_test": 200,
+    "seeds": [0, 1, 2],
+    "max_forward_passes": 5000
+  },
+  "full_benchmark": {
+    "backend": "hf",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "dataset": "sst2",
+    "shots_per_class": 4,
+    "val_per_class": 16,
+    "n_candidates": 64,
+    "halving_fractions": [0.25, 0.5, 1.0],
+    "stability_lambda": 0.5,
+    "stability_permutations": 4,
+    "n_test": 0,
+    "seeds": [0, 1, 2, 3, 4],
+    "max_forward_passes": 200000
+  }
+}

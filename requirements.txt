@@ -1,0 +1,11 @@
+# Core (runs DEMO profile offline on CPU)
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+matplotlib>=3.7
+streamlit>=1.35
+pytest>=7.0
+# Research profile only (real small language models; install with a CUDA build of torch for GPU)
+torch>=2.1
+transformers>=4.40
+sentence-transformers>=2.6
