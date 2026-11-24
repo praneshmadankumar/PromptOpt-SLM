@@ -1,0 +1,87 @@
+{
+  "profile": "demo",
+  "backend": "simulated (lexicon heuristic, NOT an SLM)",
+  "dataset": "bundled synthetic support-ticket corpus",
+  "quality": {
+    "n_rows_raw": 208,
+    "n_missing_text": 6,
+    "n_missing_label": 4,
+    "n_duplicates": 52,
+    "class_counts": {
+      "billing": 62,
+      "technical": 48,
+      "account_access": 41
+    },
+    "imbalance_ratio": 0.6613,
+    "length_mean": 11.993377483443709,
+    "length_median": 12.0,
+    "length_p95": 15.0,
+    "quality_score": 48.4,
+    "notes": [
+      "6 missing texts and 4 missing labels will be dropped.",
+      "52 duplicate texts (case/whitespace-insensitive) will be removed."
+    ]
+  },
+  "similarity": {
+    "mean_within_class": 0.2445145331077942,
+    "mean_between_class": 0.04720657444142758
+  },
+  "aggregate": {
+    "zero_shot": {
+      "f1_macro_mean": 0.7929128788077091,
+      "f1_macro_std": 0.10244148603837254,
+      "accuracy_mean": 0.8043478260869564,
+      "accuracy_std": 0.0922313192852019
+    },
+    "manual_random": {
+      "f1_macro_mean": 0.795770776869175,
+      "f1_macro_std": 0.01571698954253732,
+      "accuracy_mean": 0.8043478260869565,
+      "accuracy_std": 0.01774992567234186
+    },
+    "manual_calibrated": {
+      "f1_macro_mean": 0.7480323597970657,
+      "f1_macro_std": 0.0788453126821613,
+      "accuracy_mean": 0.7826086956521738,
+      "accuracy_std": 0.06148754619013458
+    },
+    "optimised_uncalibrated": {
+      "f1_macro_mean": 0.7791912733848217,
+      "f1_macro_std": 0.11535269565578023,
+      "accuracy_mean": 0.7971014492753623,
+      "accuracy_std": 0.10093034983466756
+    },
+    "optimised": {
+      "f1_macro_mean": 0.8044307587713658,
+      "f1_macro_std": 0.09270486755145557,
+      "accuracy_mean": 0.8115942028985508,
+      "accuracy_std": 0.08755830415648243
+    },
+    "tfidf_logreg": {
+      "f1_macro_mean": 0.954644953483429,
+      "f1_macro_std": 0.03208136842060567,
+      "accuracy_mean": 0.9565217391304349,
+      "accuracy_std": 0.03074377309506726
+    }
+  },
+  "provenance": {
+    "tfidf_logreg": "MEASURED (sklearn fit on bundled synthetic corpus)",
+    "zero_shot": "SIMULATED backend",
+    "manual_random": "SIMULATED backend",
+    "manual_calibrated": "SIMULATED backend",
+    "optimised_uncalibrated": "SIMULATED backend",
+    "optimised": "SIMULATED backend"
+  },
+  "fragility_index_mean": 0.01765408682790312,
+  "uncertainty_mean": {
+    "review_rate": 0.3768115942028986,
+    "coverage": 0.6231884057971014,
+    "accuracy_all": 0.8115942028985508,
+    "selective_accuracy": 0.9866666666666667
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

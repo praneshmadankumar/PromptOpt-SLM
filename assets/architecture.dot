@@ -1,0 +1,31 @@
+digraph G {
+  rankdir=LR; fontname="Helvetica"; node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#FFFFFF", color="#8B1A1A"];
+  edge [color="#555555"];
+  subgraph cluster_in { label="Inputs"; style=dashed; color="#999999";
+    corpus [label="Labelled corpus\n(CSV / JSON / bundled)"]; }
+  subgraph cluster_m1 { label="Module 1 - Dataset Intelligence"; style=dashed; color="#999999";
+    ds [label="DatasetEngine\nclean, QA score, splits"]; }
+  subgraph cluster_m2 { label="Module 2 - Prompt Optimisation"; style=dashed; color="#999999";
+    gen [label="Prompt generator\ninstructions, verbalisers"];
+    sel [label="Demo selector\nrandom / balanced / MMR"];
+    evo [label="Adaptive evolution\n(experimental)"];
+    opt [label="Optimiser\nsuccessive halving, J(pi), budget"]; }
+  subgraph cluster_m3 { label="Module 3 - Classification"; style=dashed; color="#999999";
+    be [label="ScoringBackend\nSimulated | HF causal LM"];
+    cal [label="Calibration\ncontextual / prior"];
+    clf [label="SLMClassifier\nprobs, abstention"]; }
+  subgraph cluster_m4 { label="Module 4 - Robustness"; style=dashed; color="#999999";
+    rob [label="Perturbations, PFI"];
+    unc [label="Uncertainty gate"]; }
+  subgraph cluster_m6 { label="Module 6 - Performance and storage"; style=dashed; color="#999999";
+    store [label="SQLite store\nruns, prompt_versions"];
+    mon [label="Latency, memory monitor"]; }
+  ui [label="Module 5 - Streamlit dashboard\n(app.py)", fillcolor="#F7E3E3"];
+  corpus -> ds -> sel; ds -> opt;
+  gen -> opt; sel -> opt; evo -> opt [style=dashed];
+  opt -> clf [label="best pi*"];
+  be -> clf; cal -> clf;
+  clf -> rob; clf -> unc;
+  opt -> store; clf -> mon;
+  store -> ui; rob -> ui; unc -> ui; mon -> ui;
+}
